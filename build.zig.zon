@@ -1,0 +1,17 @@
+.{
+    .name = "glslang",
+    .version = "1.0.0",
+
+    .dependencies = .{
+        .glslang = .{
+            .url = "https://github.com/KhronosGroup/glslang/archive/refs/tags/14.3.0.tar.gz",
+            .hash = "122096707a369b38cc66be5a6bc5083fd8f51fa640e65ffaa7f9a33f03450eaf8164",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "GenerateHeaderStep.zig",
+        "build.zig.zon",
+    },
+}
