@@ -32,8 +32,8 @@ pub fn getPath(self: *GenerateHeaderStep) Build.LazyPath {
     return .{ .generated = .{ .file = &self.generated_dir } };
 }
 
-fn make(step: *Build.Step, progress: std.Progress.Node) !void {
-    _ = progress;
+fn make(step: *Build.Step, options: Build.Step.MakeOptions) !void {
+    _ = options;
     const b = step.owner;
     const self: *GenerateHeaderStep = @fieldParentPtr("step", step);
     const cwd = std.fs.cwd();
@@ -271,7 +271,7 @@ fn make(step: *Build.Step, progress: std.Progress.Node) !void {
 
         try writer.writeAll(
             \\  }
-            \\	return shaderString;
+            \\  return shaderString;  
             \\}
             \\
             \\#endif
